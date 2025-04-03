@@ -10,8 +10,8 @@ vim.g.mapleader = " "
 keymap("n", "<Space>w", ":w<CR>", opts);
 
 -- netrw
-keymap('n', '<leader>ee', '<cmd>Ex<CR>', opts)
-keymap('n', '<leader>ec', '<cmd>Rex<CR>', opts)
+keymap('n', '<leader>..', '<cmd>Ex<CR>', opts)
+keymap('n', '<leader>.c', '<cmd>Rex<CR>', opts)
 
 -- Select all
 keymap("n", "<C-a>", "gg<S-v>G")
@@ -37,6 +37,7 @@ keymap("n", "<leader>d", "\"_d")
 keymap("v", "<leader>d", "\"_d")
 
 keymap("n", "Y", "y$", { desc = "Yank to end of line" })
+keymap("n", "<leader>V", "v$", { desc = "Select to end of line" })
 
 -- Move selected lines
 keymap("v", "J", ":m '>+1<CR>gv=gv")
@@ -59,3 +60,8 @@ keymap("n", "<leader>y", "<cmd>cprev<CR>zz")
 keymap("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 keymap("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
+-- Copilot
+keymap("n", "<C-g>", "copilot#Accept('<CR>')", { silent = true })
+
+-- Disable copilot
+keymap("n", "<C-g>", ":Copilot disable<CR>", { silent = true })

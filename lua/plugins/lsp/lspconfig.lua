@@ -75,6 +75,13 @@ return {
 
                 opts.desc = "Restart LSP"
                 keymap("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
+
+                opts.desc = "Show signature help"
+                keymap("n", "<leader>h", vim.lsp.buf.signature_help, opts) -- Show the signature help of the function or component
+
+                opts.desc = ""
+                keymap("n", "<leader>ws", vim.lsp.buf.workspace_symbol, opts) -- 
+
             end,
         })
 
@@ -111,8 +118,14 @@ return {
                     end,
                 })
             end,
+            ["eslint"] = function()
+                lspconfig["eslint"].setup({
+                    capabilities = capabilities,
+                    filetypes = { "javascriptreact", "typescriptreact", "html", "css" },
+                })
+            end,
             ["tsserver"] = function()
-                lspconfig["tsserver"].setup({
+                lspconfig["typescript-language-server"].setup({
                     capabilities = capabilities,
                     filetypes = { "javascriptreact", "typescriptreact" },
                 })

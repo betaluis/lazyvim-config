@@ -21,6 +21,8 @@ autocommand({ "Filetype" }, {
             nmap <buffer> l <CR>
             nmap <buffer> . gh
             nmap <buffer> P <C-w>z
+            setlocal number
+
         ]]
     end
 })
@@ -33,4 +35,3 @@ vim.api.nvim_create_autocmd("TextYankPost", {
         vim.highlight.on_yank()
     end
 })
-

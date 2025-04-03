@@ -33,7 +33,7 @@ local options = {
     swapfile = false, -- creates a swapfile
     backup = false,
     undodir = os.getenv("HOME") .. "/.vim/undodir",
-    undofile = true
+    undofile = true,
 }
 
 local globalOptions = {
