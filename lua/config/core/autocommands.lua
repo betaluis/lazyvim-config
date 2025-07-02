@@ -27,6 +27,12 @@ autocommand({ "Filetype" }, {
     end
 })
 
+-- Mail
+vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
+  pattern = {"*.txt", "*.md", "mail"},
+  command = "setlocal spell",
+})
+
 -- Yank Highlight
 vim.api.nvim_create_autocmd("TextYankPost", {
     desc = "Highlight when yanking (copying) text",
