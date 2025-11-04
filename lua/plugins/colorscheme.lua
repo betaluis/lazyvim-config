@@ -1,5 +1,5 @@
 function ColorMyPencils(color)
-	color = color or "everforest"
+	color = color or "solarized-osaka"
 	vim.cmd.colorscheme(color)
 
 	vim.api.nvim_set_hl(1, "Normal", { bg = "none" })
@@ -7,6 +7,12 @@ function ColorMyPencils(color)
 end
 
 return {
+	{
+		"craftzdog/solarized-osaka.nvim",
+		lazy = false,
+		priority = 1000,
+		opts = {},
+	},
 	{
 		"neanias/everforest-nvim",
 		name = "everforest",
@@ -56,7 +62,7 @@ return {
 	{
 		"LazyVim/LazyVim",
 		opts = {
-			colorscheme = "monokai-pro",
+			colorscheme = "solarized-osaka",
 			background = "soft",
 		},
 	},
