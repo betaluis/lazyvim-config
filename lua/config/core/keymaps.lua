@@ -7,11 +7,11 @@ keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 
 -- Save
-keymap("n", "<Space>w", ":w<CR>", opts);
+keymap("n", "<Space>w", ":w<CR>", opts)
 
 -- netrw
-keymap('n', '<leader>..', '<cmd>Ex<CR>', opts)
-keymap('n', '<leader>.c', '<cmd>Rex<CR>', opts)
+keymap("n", "<leader>ee", "<cmd>Ex<CR>", opts)
+keymap("n", "<leader>ei", "<cmd>Rex<CR>", opts)
 
 -- Select all
 keymap("n", "<C-a>", "gg<S-v>G")
@@ -26,15 +26,15 @@ keymap("n", "n", "nzzzv")
 keymap("n", "N", "Nzzzv")
 
 -- Greatest keymap
-keymap("x", "<leader>p", "\"_dP")
+keymap("x", "<leader>p", '"_dP')
 
 -- Clipboard keymaps
-keymap("n", "<leader>y", "\"+y")
-keymap("v", "<leader>y", "\"+y")
-keymap("n", "<leader>Y", "\"+Y")
+keymap("n", "<leader>y", '"+y')
+keymap("v", "<leader>y", '"+y')
+keymap("n", "<leader>Y", '"+Y')
 
-keymap("n", "<leader>d", "\"_d")
-keymap("v", "<leader>d", "\"_d")
+keymap("n", "<leader>d", '"_d')
+keymap("v", "<leader>d", '"_d')
 
 keymap("n", "Y", "y$", { desc = "Yank to end of line" })
 keymap("n", "<leader>V", "v$", { desc = "Select to end of line" })
@@ -44,12 +44,12 @@ keymap("v", "J", ":m '>+1<CR>gv=gv")
 keymap("v", "K", ":m '<-2<CR>gv=gv")
 
 -- This is going to get me canceled
-keymap("i", "<C-c>", "<Esc>")
+keymap("i", "<C-i>", "<Esc>")
 
 keymap("n", "Q", "<nop>")
 keymap("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 keymap("n", "<leader>f", function()
-    vim.lsp.buf.format()
+	vim.lsp.buf.format()
 end)
 
 keymap("n", "<C-k>", "<cmd>cnext<CR>zz")

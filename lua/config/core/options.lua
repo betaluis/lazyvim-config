@@ -16,13 +16,16 @@ local options = {
 
 	smartindent = true,
 	smarttab = true,
-	wrap = false,
+	wrap = true,
+	linebreak = true,
+	breakindent = true,
 
 	clipboard = "", -- gives access to clipboard
 	scrolloff = 8,
 	sidescrolloff = 8,
 	guifont = "monospace:h17",
 	termguicolors = true,
+
 
 	foldlevel = 20,
 	foldmethod = "manual",

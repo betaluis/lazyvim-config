@@ -14,6 +14,12 @@ return {
 		opts = {},
 	},
 	{
+		"rebelot/kanagawa.nvim",
+		lazy = false,
+		priority = 1000,
+		opts = {},
+	},
+	{
 		"neanias/everforest-nvim",
 		name = "everforest",
 		config = function()

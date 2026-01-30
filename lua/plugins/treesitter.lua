@@ -5,6 +5,7 @@ return {
 	dependencies = {
 		"windwp/nvim-ts-autotag",
 	},
+	opts = { ensure_installed = { "astro", "css" } },
 	config = function()
 		local treesitter = require("nvim-treesitter.configs")
 
@@ -40,6 +41,7 @@ return {
 				"query",
 				"vimdoc",
 				"c",
+				"astro",
 			},
 			incremental_selection = {
 				enable = true,
