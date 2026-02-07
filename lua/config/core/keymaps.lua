@@ -7,11 +7,11 @@ keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 
 -- Save
-keymap("n", "<Space>w", ":w<CR>", opts)
+keymap("n", "<Space>,w", ":w<CR>", opts)
 
 -- netrw
-keymap("n", "<leader>ee", "<cmd>Ex<CR>", opts)
-keymap("n", "<leader>ei", "<cmd>Rex<CR>", opts)
+keymap("n", "<leader>..", "<cmd>Ex<CR>", opts)
+keymap("n", "<leader>.c", "<cmd>Rex<CR>", opts)
 
 -- Select all
 keymap("n", "<C-a>", "gg<S-v>G")
