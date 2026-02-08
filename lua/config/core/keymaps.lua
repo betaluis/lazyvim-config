@@ -7,7 +7,7 @@ keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 
 -- Save
-keymap("n", "<Space>,w", ":w<CR>", opts)
+keymap("n", "<Space>;w", ":w<CR>", opts)
 
 -- netrw
 keymap("n", "<leader>..", "<cmd>Ex<CR>", opts)
