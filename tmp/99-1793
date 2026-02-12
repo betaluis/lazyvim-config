@@ -1,0 +1,14 @@
+-- Move selected lines up/down
+keymap("v", "J", ":m '>+1<CR>gv=gv")
+keymap("v", "K", ":m '<-2<CR>gv=gv")
+
+-- Join lines without moving cursor
+keymap("n", "J", "mzJ`z")
+
+-- Center screen on half-page jumps
+keymap("n", "<C-d>", "<C-d>zz")
+keymap("n", "<C-u>", "<C-u>zz")
+
+-- Center screen on search navigation
+keymap("n", "n", "nzzzv")
+keymap("n", "N", "Nzzzv")
