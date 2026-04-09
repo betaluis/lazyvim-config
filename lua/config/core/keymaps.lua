@@ -7,11 +7,11 @@ keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 
 -- Save
-keymap("n", "<Space>;w", ":w<CR>", opts)
+keymap("n", "<Space>w", ":w<CR>", opts)
 
 -- netrw
-keymap("n", "<leader>..", "<cmd>Ex<CR>", opts)
-keymap("n", "<leader>.c", "<cmd>Rex<CR>", opts)
+keymap("n", "<leader>ee", "<cmd>Ex<CR>", opts)
+keymap("n", "<leader>ei", "<cmd>Rex<CR>", opts)
 
 -- Select all
 keymap("n", "<C-a>", "gg<S-v>G")
@@ -44,12 +44,12 @@ keymap("v", "J", ":m '>+1<CR>gv=gv")
 keymap("v", "K", ":m '<-2<CR>gv=gv")
 
 -- This is going to get me canceled
-keymap("i", "jj", "<Esc>")
+keymap("i", "ii", "<Esc>")
 
 keymap("n", "Q", "<nop>")
 keymap("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 keymap("n", "<leader>f", function()
-	vim.lsp.buf.format()
+    vim.lsp.buf.format()
 end)
 
 keymap("n", "<C-k>", "<cmd>cnext<CR>zz")

@@ -1,0 +1,4 @@
+/home/luis/.config/nvim/lua/plugins/99.lua:19:13,6,`tmp_dir` has a known failure mode when moved outside the cwd, so this block is the place to add validation, fallback behavior, or a clearer user-facing error.
+/home/luis/.config/nvim/lua/plugins/99.lua:28:17,5,This is the clearest unfinished area in the config: `cursor_rules` is intentionally disabled and the comments describe the rule-merging problem that still needs a solution.
+/home/luis/.config/nvim/lua/plugins/99.lua:66:13,12,The `md_files` lookup is documented as likely broken when cwd changes, which makes this block the natural place to harden path resolution and project-root detection.
+/home/luis/.config/nvim/lua/plugins/99.lua:80:9,7,The visual-mode mapping currently depends on stale selection state, and the comment explicitly suggests adding a mode check or assertion here.
