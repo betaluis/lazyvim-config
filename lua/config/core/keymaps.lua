@@ -9,9 +9,11 @@ vim.g.mapleader = " "
 -- Save
 keymap("n", "<Space>w", ":w<CR>", opts)
 
--- netrw
-keymap("n", "<leader>ee", "<cmd>Ex<CR>", opts)
-keymap("n", "<leader>ei", "<cmd>Rex<CR>", opts)
+-- neo-tree (netrw-like workflow)
+keymap("n", "<leader>ee", "<cmd>Neotree toggle filesystem reveal left<CR>", opts)
+keymap("n", "<leader>ei", "<cmd>Neotree focus filesystem left<CR>", opts)
+keymap("n", "<C-h>", "<cmd>Neotree focus filesystem left<CR>", opts)
+keymap("n", "<C-l>", "<C-w>l", opts)
 
 -- Select all
 keymap("n", "<C-a>", "gg<S-v>G")
