@@ -46,7 +46,7 @@ keymap("v", "J", ":m '>+1<CR>gv=gv")
 keymap("v", "K", ":m '<-2<CR>gv=gv")
 
 -- This is going to get me canceled
-keymap("i", "ii", "<Esc>")
+keymap("i", "jj", "<Esc>")
 
 keymap("n", "Q", "<nop>")
 keymap("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")

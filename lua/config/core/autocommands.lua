@@ -48,3 +48,10 @@ vim.api.nvim_create_autocmd("Filetype", {
 		vim.opt_local.relativenumber = true
 	end,
 })
+
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "markdown",
+	callback = function()
+		require("config.core.markdown").setup()
+	end,
+})

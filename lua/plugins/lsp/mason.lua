@@ -33,6 +33,7 @@ return {
 				"astro",
 				"html",
 				"cssls",
+				"marksman",
 				"tailwindcss",
 			},
 			automatic_installation = true,
