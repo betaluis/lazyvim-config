@@ -1,5 +1,5 @@
 function ColorMyPencils(color)
-	color = color or "gruvbox"
+	color = color or "everforest"
 	vim.cmd.colorscheme(color)
 
 	vim.api.nvim_set_hl(1, "Normal", { bg = "none" })
@@ -26,6 +26,7 @@ return {
 			ColorMyPencils()
 		end,
 	},
+	{ "shaunsingh/nord.nvim" },
 	{ "ellisonleao/gruvbox.nvim", priority = 1000, config = true, opts = ... },
 	{
 		"loctvl842/monokai-pro.nvim",
@@ -69,7 +70,7 @@ return {
 	{
 		"LazyVim/LazyVim",
 		opts = {
-			colorscheme = "gruvbox",
+			colorscheme = "everforest",
 			background = "soft",
 		},
 	},
