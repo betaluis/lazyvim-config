@@ -2,6 +2,14 @@ local opts = { noremap = true, silent = true }
 local term_opts = { silent = true }
 local keymap = vim.keymap.set
 
+local function insert_text_at_cursor(text)
+    local row, col = unpack(vim.api.nvim_win_get_cursor(0))
+    local line = vim.api.nvim_get_current_line()
+    local new_line = line:sub(1, col) .. text .. line:sub(col + 1)
+    vim.api.nvim_buf_set_lines(0, row - 1, row, false, { new_line })
+    vim.api.nvim_win_set_cursor(0, { row, col + #text })
+end
+
 -- Leader key
 keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
@@ -61,6 +69,35 @@ keymap("n", "<leader>y", "<cmd>cprev<CR>zz")
 
 keymap("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 keymap("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
+
+-- Date/time insert
+keymap("n", "<leader>dd", function()
+    insert_text_at_cursor(os.date("%Y-%m-%d"))
+end, { desc = "Insert date" })
+
+keymap("n", "<leader>dt", function()
+    insert_text_at_cursor(os.date("%Y-%m-%d %H:%M"))
+end, { desc = "Insert datetime" })
+
+vim.api.nvim_create_user_command("InsertDate", function()
+    insert_text_at_cursor(os.date("%Y-%m-%d"))
+end, { desc = "Insert current date" })
+
+vim.api.nvim_create_user_command("InsertDateTime", function()
+    insert_text_at_cursor(os.date("%Y-%m-%d %H:%M"))
+end, { desc = "Insert current datetime" })
+
+-- File path helpers
+keymap("n", "<leader>fp", function()
+    local path = vim.fn.expand("%:p")
+    if path == "" then
+        vim.notify("No file path", vim.log.levels.WARN)
+        return
+    end
+
+    vim.fn.setreg("+", path)
+    vim.notify(path)
+end, { desc = "Copy full file path" })
 
 -- Copilot
 keymap("n", "<C-g>", "copilot#Accept('<CR>')", { silent = true })
