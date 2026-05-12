@@ -37,7 +37,8 @@ return {
 		vim.api.nvim_create_autocmd("FileType", {
 			callback = function(args)
 				pcall(vim.treesitter.start, args.buf)
-				if vim.bo[args.buf].filetype ~= "markdown" then
+				local ft = vim.bo[args.buf].filetype
+				if ft ~= "markdown" and ft ~= "typescript" and ft ~= "typescriptreact" then
 					vim.bo[args.buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
 				end
 			end,
