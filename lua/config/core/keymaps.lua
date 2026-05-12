@@ -117,17 +117,10 @@ keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 keymap("n", "<Space>w", ":w<CR>", opts)
 
-<<<<<<< HEAD
 -- netrw workflow
 keymap("n", "<leader>ee", "<cmd>Ex<CR>", opts)
 keymap("n", "<leader>ei", "<cmd>Vex<CR>", opts)
 keymap("n", "<C-h>", "<C-w>h", opts)
-=======
--- Section: file explorer + window nav
--- keymap("n", "<leader>ee", "<cmd>Neotree toggle filesystem reveal left<CR>", opts)
--- keymap("n", "<leader>ei", "<cmd>Neotree focus filesystem left<CR>", opts)
--- keymap("n", "<C-h>", "<cmd>Neotree focus filesystem left<CR>", opts)
->>>>>>> 9f40cb0 (99 binding to open last select session)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
 -- Section: movement + view centering

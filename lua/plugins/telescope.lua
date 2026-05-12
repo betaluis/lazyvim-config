@@ -53,7 +53,23 @@ return {
 
         telescope.setup({
             defaults = {
-                path_display = { "smart" },
+                path_display = function(_, path)
+                    local parts = vim.split(path, "/", { plain = true })
+                    local file = table.remove(parts) or path
+
+                    local count = math.min(3, #parts)
+                    local parents = {}
+
+                    for i = #parts - count + 1, #parts do
+                        parents[#parents + 1] = parts[i]
+                    end
+
+                    if #parents > 0 then
+                        return string.format("%s (%s/)", file, table.concat(parents, "/"))
+                    end
+
+                    return file
+                end,
                 mappings = {
                     i = {
                         ["<C-k>"] = actions.move_selection_previous, -- move to prev result

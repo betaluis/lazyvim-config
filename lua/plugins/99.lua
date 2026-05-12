@@ -10,7 +10,7 @@ return {
         local basename = vim.fs.basename(cwd)
         _99.setup({
             -- provider = _99.Providers.ClaudeCodeProvider, -- default: OpenCodeProvider,
-            model = "openai/gpt-5.4",
+            model = "openai/gpt-5.3-codex",
             logger = {
                 level = _99.DEBUG,
                 path = "/tmp/" .. basename .. ".99.debug",
