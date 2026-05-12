@@ -96,5 +96,9 @@ return {
         vim.keymap.set("n", "<leader>9s", function()
             _99.search()
         end)
+
+        vim.keymap.set("n", "<leader>9o", function()
+            _99.open()
+        end)
     end,
 }
