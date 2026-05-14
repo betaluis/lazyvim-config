@@ -118,8 +118,18 @@ vim.g.mapleader = " "
 keymap("n", "<Space>w", ":w<CR>", opts)
 
 -- netrw workflow
+local function close_netrw_window()
+    for _, win in ipairs(vim.api.nvim_tabpage_list_wins(0)) do
+        local buf = vim.api.nvim_win_get_buf(win)
+        if vim.bo[buf].filetype == "netrw" then
+            vim.api.nvim_win_close(win, true)
+            return
+        end
+    end
+end
+
 keymap("n", "<leader>ee", "<cmd>Ex<CR>", opts)
-keymap("n", "<leader>ei", "<cmd>Vex<CR>", opts)
+keymap("n", "<leader>ei", close_netrw_window, opts)
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
