@@ -129,7 +129,7 @@ local function close_netrw_window()
 end
 
 keymap("n", "<leader>ee", "<cmd>Ex<CR>", opts)
-keymap("n", "<leader>ei", close_netrw_window, opts)
+keymap("n", "<leader>ei", "<cmd>Rex<CR>", opts)
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
