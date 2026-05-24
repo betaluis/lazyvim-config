@@ -165,6 +165,9 @@ end)
 keymap("n", "<C-k>", "<cmd>cnext<CR>zz")
 keymap("n", "<C-y>", "<cmd>cprev<CR>zz")
 keymap("n", "<leader>k", "<cmd>lnext<CR>zz")
+keymap("n", "<leader>le", function()
+    vim.diagnostic.setloclist({ severity = vim.diagnostic.severity.ERROR })
+end, { desc = "List buffer errors" })
 
 -- Section: markdown writing helpers
 keymap("n", "<leader>dd", function()
