@@ -1,4 +1,4 @@
 return {
-	"uga-rosa/ccc.nvim",
-	enabled = false,
+	-- "uga-rosa/ccc.nvim",
+	-- enabled = false,
 }
