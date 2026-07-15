@@ -1,4 +1,4 @@
-return {
-	"OXY2DEV/markview.nvim",
-	opts = {},
-}
+-- return {
+-- 	"OXY2DEV/markview.nvim",
+-- 	opts = {},
+-- }
