@@ -1,0 +1,1 @@
+{"id":"nvim-1","title":"Fix invalid plugins.markview spec","description":"Neovim headless init fails because lua/plugins/markview.lua returns nil (all spec lines commented).","status":"open","priority":2,"issue_type":"task","owner":"luis.betancourt.dev.com","created_at":"2026-08-13T20:58:53.83965077-05:00","created_by":"betaluis","updated_at":"2026-08-13T20:58:53.83965077-05:00"}

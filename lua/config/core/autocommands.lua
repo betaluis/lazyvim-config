@@ -30,6 +30,9 @@ autocommand({ "Filetype" }, {
 	callback = function()
 		keymap("n", "H", "u", { buffer = true, remap = true, silent = true })
 		keymap("n", "h", netrw_h, { buffer = true, silent = true, desc = "Close tree dir or go up" })
+		-- netrw's tree squeeze rebuilds netrw maps; predefine this so netrw skips
+		-- its <unique> <C-h> map, which conflicts with our global window map.
+		keymap("n", "<C-h>", "<Plug>NetrwHideEdit", { buffer = true, remap = true, silent = true })
 		keymap("n", "l", "<CR>", { buffer = true, remap = true, silent = true })
 		keymap("n", ".", "gh", { buffer = true, remap = true, silent = true })
 		keymap("n", "P", "<C-w>z", { buffer = true, remap = true, silent = true })
