@@ -41,7 +41,6 @@ local options = {
 
 local globalOptions = {
 	mapleader = " ",
-	netrw_liststyle = 3, -- start netrw in tree view
 	-- netrw_keepdir = 0,
 }
 
