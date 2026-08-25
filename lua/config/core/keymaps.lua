@@ -177,6 +177,7 @@ keymap("n", "<leader>dt", function()
     insert_text_at_cursor(os.date("%Y-%m-%d %H:%M"))
 end, { desc = "Insert datetime" })
 keymap("x", "<leader>ml", wrap_visual_markdown_link, { desc = "Wrap selection as markdown link" })
+keymap("x", "<leader>mt", "<cmd>'<,'>!column -t -s '|' -o '|'<CR>", { desc = "Format Markdown table" })
 
 vim.api.nvim_create_user_command("InsertDate", function()
     insert_text_at_cursor(os.date("%Y-%m-%d"))
